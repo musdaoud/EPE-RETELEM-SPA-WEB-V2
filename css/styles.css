@@ -270,7 +270,7 @@
       color: #fff;
       padding: 3rem 1rem;
       isolation: isolate;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/background.jpg');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://github.com/musdaoud/EPE-RETELEM-SPA-WEB-V2/blob/refs/heads/main/assets/background.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
