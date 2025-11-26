@@ -16,42 +16,67 @@
         <span class="brand-name">EPE RETELEM SPA</span>
       </a>
 
+    <!-- Search Bar (appears on scroll for desktop) -->
+      <div class="header-search" id="headerSearch">
+        <div class="search-input-wrapper">
+          <input 
+            type="text" 
+            class="search-input" 
+            id="searchInput" 
+            placeholder="Rechercher services, partenaires, actualités..."
+            autocomplete="off"
+          />
+          <button class="search-button" id="searchButton">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
+      <button class="mobile-search-toggle" id="mobileSearchToggle" aria-label="Rechercher">
+        <i class="fas fa-search"></i>
+      </button>
+
       <button class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Afficher le menu">
         <span class="hamburger"></span>
       </button>
 
+        <button class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Afficher le menu">
+          <span class="hamburger"></span>
+        </button>
+
       <nav id="primary-nav" class="primary-nav" aria-label="Navigation principale">
         <ul class="nav-list">
-          <li><a href="#">Accueil</a></li>
+          <li><a href="#accueil" class="nav-link">Accueil</a></li>
 
           <li class="has-submenu">
-            <a href="#" aria-haspopup="true" aria-expanded="false">Notre Société</a>
+            <a href="#notre-societe" class="nav-link" aria-haspopup="true" aria-expanded="false">Notre Société</a>
             <ul class="submenu">
-              <li><a href="#">Notre histoire</a></li>
-              <li><a href="#">Nos valeurs</a></li>
-              <li><a href="#">Notre engagement</a></li>
-              <li><a href="#">Qualité</a></li>
-              <li><a href="#">Nos atouts</a></li>
+              <li><a href="#notre-histoire" class="nav-link">Notre histoire</a></li>
+              <li><a href="#nos-valeurs" class="nav-link">Nos valeurs</a></li>
+              <li><a href="#notre-engagement" class="nav-link">Notre engagement</a></li>
+              <li><a href="#qualite" class="nav-link">Qualité</a></li>
+              <li><a href="#nos-atouts" class="nav-link">Nos atouts</a></li>
             </ul>
           </li>
 
           <li class="has-submenu">
-            <a href="#" aria-haspopup="true" aria-expanded="false">Nos activités</a>
+            <a href="#services-section" class="nav-link" aria-haspopup="true" aria-expanded="false">Nos activités</a>
             <ul class="submenu">
-              <li><a href="#">Intégration Systèmes d'information & Réseaux</a></li>
-              <li><a href="#">Solutions Voix & Télécommunications</a></li>
-              <li><a href="#">Vidéosurveillance & Contrôle d'Accès</a></li>
-              <li><a href="#">Systèmes diffusion & TNT</a></li>
-              <li><a href="#">Systèmes de Détection & Protection Incendie</a></li>
-              <li><a href="#">Solutions de Transmission & Infrastructure de Communication</a></li>
-              <li><a href="#">Cybersécurité</a></li>
-              <li><a href="#">Centre de formation professionnelle</a></li>
+              <li><a href="#services-section" data-service="1" class="service-sub-link">Intégration Systèmes d'information & Réseaux</a></li>
+              <li><a href="#services-section" data-service="2" class="service-sub-link">Solutions Voix & Télécommunications</a></li>
+              <li><a href="#services-section" data-service="3" class="service-sub-link">Vidéosurveillance & Contrôle d'Accès</a></li>
+              <li><a href="#services-section" data-service="4" class="service-sub-link">Systèmes diffusion & TNT</a></li>
+              <li><a href="#services-section" data-service="5" class="service-sub-link">Systèmes de Détection & Protection Incendie</a></li>
+              <li><a href="#services-section" data-service="6" class="service-sub-link">Solutions de Transmission & Infrastructure de Communication</a></li>
+              <li><a href="#services-section" data-service="7" class="service-sub-link">Cybersécurité</a></li>
+              <li><a href="#services-section" data-service="8" class="service-sub-link">Centre de formation professionnelle</a></li>
             </ul>
           </li>
 
-          <li><a href="#">Nos partenaires</a></li>
-          <li><a href="#">Nos actualités</a></li>
-          <li><a href="#" class="btn btn-primary">Contact</a></li>
+          <li><a href="#partenaires-section" class="nav-link">Nos partenaires</a></li>
+          <li><a href="#actualites-section" class="nav-link">Nos actualités</a></li>
+          <li><a href="#contact-section" class="btn btn-primary nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -72,35 +97,25 @@
       </div>
     </section>
 
-      <!-- CEO Message Section -->
     <section class="ceo-section" id="mot-du-pdg">
         <div class="container">
             <h2 class="section-title">Le Mot du PDG</h2>
-            <p class="section-subtitle">Découvrez la vision et l'engagement de notre Président-Directeur Général</p>
             
             <div class="ceo-container">
                 <div class="ceo-image-container">
                     <img src="assets/PDG2.jpg" alt="PDG EPE RETELEM SPA" class="ceo-image">
-                    <div class="ceo-image-frame"></div>
-                    <div class="ceo-badge">
-                        <i class="fas fa-award"></i>
-                        Président-Directeur Général
-                    </div>
+                    <!-- Removed old frame div -->
                 </div>
                 
                 <div class="ceo-content">
                     <p class="ceo-quote">
-                        "Notre succès repose sur notre capacité à anticiper les besoins de nos clients et à innover constamment."
+                        "Notre succès repose sur notre capacité à offrir des services à haute expertise technologique, afin d'accompagner nos clients dans un environnement en évolution permanente."
                     </p>
                     
                     <div class="ceo-message">
-                        <p>En ma qualité de Président Directeur Générale de RETELEM, je tiens tout d'abord à vous remercier de l'interet que vous portez pour notre entreprise en visant son site web: www.retelem-dz.com</p>
+                        <p>Depuis sa création en 1971, sous le nom de SONATITE, RETELEM n'a cessé de relever des défis avec succès, en s'imposant tout d'abord comme pionnière dans la réalisation des infrastructures de télécommunications en Algérie, en s'imposant tout d'abord comme pionnière dans la réalisation des infrastructures de télécommunications en Algérie, clientèle de plus en plus exigeante.</p>
                         
-                        <p>Depuis sa création en 2008, RETELEM (ex SONATITE) a pu relever d’importants défis.</p>
-                        
-                        <p> Cependant, l'avancée téchnologique des TIC's est en constante évolution ce qui nous pousse à suivre la cadence en metant en oeuvre la numérisation déja initié. Dans ce contexte, nos services, sont en adaptation et évolution permanente afin de satisfaire notre clientèle de plus en plus exigeante.</p>
-                        
-                        <p>Notre devise est l’amélioration de la qualité de nos services, mais surtout la satisfaction de nos clients.</p>
+                        <p>Acteur clé des Solutions & Services à forte valeur ajoutée, RETELEM met l'expertise de ses équipes au service des entreprises afin de répondre à leurs besoins et d'accompagner durablement leurs performances.</p>
                     </div>
                     
                     <div class="ceo-signature">
@@ -108,21 +123,6 @@
                             <h4>M. Kamel Benchlef</h4>
                             <p>Président-Directeur Général</p>
                             <p>EPE RETELEM SPA</p>
-                        </div>
-                    </div>
-                    
-                    <div class="ceo-stats">
-                        <div class="stat-itemm">
-                            <div class="stat-numberr">50+</div>
-                            <div class="stat-labelll">Ans d'expérience</div>
-                        </div>
-                        <div class="stat-itemm">
-                            <div class="stat-numberr">500+</div>
-                            <div class="stat-labelll">Projets réalisés</div>
-                        </div>
-                        <div class="stat-itemm">
-                            <div class="stat-numberr">120+</div>
-                            <div class="stat-labelll">Clients satisfaits</div>
                         </div>
                     </div>
                 </div>
@@ -133,12 +133,11 @@
 
 
 
-
   <section class="services-section">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Nos Domaines d'Expertise</h2>
-        <p class="section-subtitle">Découvrez nos solutions complètes pour répondre à tous vos besoins en télécommunications, sécurité et systèmes d'information</p>
+       <!--  <p class="section-subtitle">Découvrez nos solutions complètes pour répondre à tous vos besoins en télécommunications, sécurité et systèmes d'information</p>-->
       </div>
       <div class="services-grid">
         <!-- Service 1 -->
@@ -262,34 +261,94 @@
     </div>
   </div>
 
-    <section class="stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">50+</div>
-            <div class="stat-label-section">Ans d'expérience</div>
+<!-- Enhanced Stats Section -->
+<!-- Professional Stats Section -->
+<section class="stats-section" data-variant="enterprise">
+  <div class="container">
+    <header class="stats-header">
+      <h2 class="stats-title">Performance & Impact</h2>
+      <p class="stats-subtitle">Trusted by industry leaders worldwide</p>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-item" data-count="50" data-suffix="+">
+        <div class="stat-content">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+            </svg>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">500+</div>
-            <div class="stat-label-section">Projets réalisés</div>
+          <div class="stat-number">
+            <span class="stat-counter" data-target="50">0</span>+
           </div>
-          <div class="stat-item">
-            <div class="stat-number">120+</div>
-            <div class="stat-label-section">Clients satisfaits</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label-section">Support technique</div>
-          </div>
+          <div class="stat-label">Years of Excellence</div>
+          <div class="stat-description">Since 1971 serving Algeria</div>
         </div>
       </div>
-    </section>
+
+      <div class="stat-item" data-count="500" data-suffix="+">
+        <div class="stat-content">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M14 2H6C4.89 2 4 2.89 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="stat-number">
+            <span class="stat-counter" data-target="500">0</span>+
+          </div>
+          <div class="stat-label">Projects Delivered</div>
+          <div class="stat-description">Successful implementations</div>
+        </div>
+      </div>
+
+      <div class="stat-item" data-count="120" data-suffix="+">
+        <div class="stat-content">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15 12 15H6C4.93913 15 3.92172 15.4214 3.17157 16.1716C2.42143 16.9217 2 17.9391 2 19V21" stroke="currentColor" stroke-width="2"/>
+              <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="stat-number">
+            <span class="stat-counter" data-target="120">0</span>+
+          </div>
+          <div class="stat-label">Enterprise Clients</div>
+          <div class="stat-description">Satisfied organizations</div>
+        </div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-content">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 6V12L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Technical Support</div>
+          <div class="stat-description">Continuous assistance</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="stats-footer">
+      <a href="#contact-section" class="cta-link nav-link">
+        Explore our solutions
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </a>
+    </footer>
+  </div>
+</section>
 
     <section class="news-gallery-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Notre Actualité</h2>
-                <p class="section-subtitle">Découvrez RETELEM CONNECT. Restez informé de nos dernières réalisations, événements et innovations qui façonnent l'avenir des télécommunications en Algérie.</p>
+               <!--  <p class="section-subtitle">Découvrez RETELEM CONNECT. Restez informé de nos dernières réalisations, événements et innovations qui façonnent l'avenir des télécommunications en Algérie.</p> -->
             </div>
 
             <div class="news-navigation">
@@ -330,6 +389,15 @@
                 <!-- Cards added by JavaScript -->
             </div>
 
+    <div class="news-archive-cta">
+        <a class="btn btn-primary btn-large" href="news-archive.html">
+            <i class="fas fa-newspaper"></i>
+            Voir toutes nos actualités
+        </a>
+    </div>
+
+
+
             <!-- Company Showcase -->
             <div class="company-showcase">
                 <div class="company-grid">
@@ -363,62 +431,128 @@
         </div>
     </section>
 
-  <section class="history-section">
-    <div class="container">
-      <div class="history-content">
-        <h2 class="history-title">Inspirés par notre héritage pour façonner le futur…</h2>
-        <div class="history-text">
-          <p>Pionnière depuis plus de 50 ans, EPE RETELEM SPA doit son succès à l'engagement, au savoir-faire et à l'expertise des femmes et des hommes qui contribuent chaque jour à notre succès.</p>
-          <p>Forte de plus de 40 ans d'expérience, EPE RETELEM SPA s'appuie sur la compétence et le dévouement de ses équipes, qui ont contribué et continuent de contribuer à son rayonnement et à sa réussite durable.</p>
-        </div>
+    <section class="history-section">
+        <div class="container">
+            <div class="history-content">
+                <h2 class="history-title">Inspirés par notre héritage pour façonner le futur…</h2>
+                <div class="history-text">
+                    <p>Pionnière depuis plus de 50 ans, EPE RETELEM SPA doit son succès à l'engagement, au savoir-faire et à l'expertise des femmes et des hommes qui contribuent chaque jour à notre succès.</p>
+                </div>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-year">1971</div>
-            <div class="timeline-content">
-              <h3>Naissance de SONATITE</h3>
-              <p>SONATITE est pionnière dans la réalisation des infrastructures de télécommunications en Algérie, marquant le début d'une longue histoire d'innovation et d'excellence.</p>
+                <!-- Professional Horizontal Timeline -->
+                <div class="timeline-container">
+                    <div class="timeline-connector"></div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1971</div>
+                            <div class="timeline-logo-circle">
+                                <div class="logo-image"><img src="assets/sonatite.png" alt="SONATITE logo" class="logo-image" /></div>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Naissance de SONATITE</h3>
+                                <p>SONATITE est pionnière dans la réalisation des infrastructures de télécommunications en Algérie, marquant le début d'une longue histoire d'innovation et d'excellence. Notre engagement envers la qualité et l'innovation a défini notre trajectoire dès le début.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2008</div>
+                            <div class="timeline-logo-circle">
+                                <div class="logo-image"><img src="assets/logo-retelem.png" alt="retelem logo" class="logo-image" /></div>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Nouvelle identité, RETELEM</h3>
+                                <p>Un nouveau nom, une identité visuelle modernisée pour EPE RETELEM qui devient le leader des réseaux, des technologies de l'information et de la communication. Cette transformation a marqué notre expansion vers de nouveaux marchés et technologies.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025</div>
+                            <div class="timeline-logo-circle">
+                                <div class="logo-image"><img src="assets/logo.png" alt="new retelem logo" class="logo-image" /></div>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Vision d'avenir ambitieux</h3>
+                                <p>La nouvelle identité visuelle incarne la dynamique dans laquelle EPE RETELEM SPA est résolument entrée : celle d'une compagnie multi-activités qui met en œuvre sa mission de proposer des Solutions & Services à forte valeur ajoutée pour répondre aux besoins des entreprises afin de contribuer à leurs performances.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Add this after the timeline and before the existing history-images -->
+                      <div class="history-gallery-section">
+                          <div class="container">
+                              <h3 class="gallery-title">Notre Histoire en Images</h3>
+                              <div class="history-gallery">
+                                  <div class="gallery-track">
+                                      <div class="gallery-item">
+                                          <img src="assets/10.jpeg" alt="Premiers équipements télécoms 1970s">
+                                          <div class="gallery-caption">Premiers équipements télécoms (1970s)</div>
+                                          <div class="story-popup">
+                                              <h4>Les Débuts de la Révolution Télécom</h4>
+                                              <p>En 1971, SONATITE installe les premiers équipements de télécommunications qui ont connecté l'Algérie. Ces systèmes analogiques pionniers ont posé les bases de l'infrastructure moderne.</p>
+                                              <div class="story-meta">1971 • Fondation</div>
+                                          </div>
+                                      </div>
+                                      <div class="gallery-item">
+                                          <img src="assets/11.jpeg" alt="Équipes techniques en formation">
+                                          <div class="gallery-caption">Équipes techniques en formation (1980s)</div>
+                                          <div class="story-popup">
+                                              <h4>Formation des Premiers Experts</h4>
+                                              <p>Dans les années 80, nous avons formé la première génération d'ingénieurs télécoms algériens. Ces formations ont créé un savoir-faire local qui a permis l'autonomie technologique.</p>
+                                              <div class="story-meta">1985 • Formation</div>
+                                          </div>
+                                      </div>
+                                      <div class="gallery-item">
+                                          <img src="assets/12.jpeg" alt="Premier centre de données">
+                                          <div class="gallery-caption">Premier centre de données (1990s)</div>
+                                          <div class="story-popup">
+                                              <h4>L'Ère Numérique Commence</h4>
+                                              <p>1995 marque l'installation de notre premier centre de données avec des serveurs mainframe. Cette infrastructure a supporté la transition vers le numérique des entreprises algériennes.</p>
+                                              <div class="story-meta">1995 • Innovation</div>
+                                          </div>
+                                      </div>
+                                      <div class="gallery-item">
+                                          <img src="assets/13.jpeg" alt="Transition vers RETELEM">
+                                          <div class="gallery-caption">Transition vers RETELEM (2000s)</div>
+                                          <div class="story-popup">
+                                              <h4>Nouvelle Identité, Nouvelle Vision</h4>
+                                              <p>En 2008, SONATITE devient RETELEM, symbolisant notre évolution vers les solutions intégrées. Cette transformation a élargi notre portefeuille de services et notre rayonnement international.</p>
+                                              <div class="story-meta">2008 • Transformation</div>
+                                          </div>
+                                      </div>
+                                      <div class="gallery-item">
+                                          <img src="assets/14.jpeg" alt="Expansion des services">
+                                          <div class="gallery-caption">Expansion des services (2010s)</div>
+                                          <div class="story-popup">
+                                              <h4>Expansion et Diversification</h4>
+                                              <p>Les années 2010 ont vu RETELEM diversifier ses services vers la cybersécurité, la vidéosurveillance et les solutions cloud. Nous avons doublé notre taille et triplé notre expertise.</p>
+                                              <div class="story-meta">2015 • Expansion</div>
+                                          </div>
+                                      </div>
+                                      <div class="gallery-item">
+                                          <img src="assets/15.jpeg" alt="Innovation technologique">
+                                          <div class="gallery-caption">Innovation technologique (2020s)</div>
+                                          <div class="story-popup">
+                                              <h4>L'Innovation au Cœur de Notre ADN</h4>
+                                              <p>Aujourd'hui, RETELEM innove avec l'IA, l'IoT et la 5G. Notre centre de R&D développe des solutions sur mesure pour l'industrie 4.0 et la transformation digitale de l'Algérie.</p>
+                                              <div class="story-meta">2024 • Innovation</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
             </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year">2008</div>
-            <div class="timeline-content">
-              <h3>Nouvelle identité, nouvelle vision</h3>
-              <p>Un nouveau nom, une identité visuelle modernisée pour EPE RETELEM qui devient le leader des réseaux, des technologies de l'information et de la communication.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year">2025</div>
-            <div class="timeline-content">
-              <h3>Vision d'avenir</h3>
-              <p>La nouvelle identité visuelle incarne la dynamique dans laquelle EPE RETELEM SPA est résolument entrée : celle d'une compagnie multi-activités qui met en œuvre sa mission de proposer des Solutions & Services à forte valeur ajoutée pour répondre aux besoins des entreprises afin de contribuer à leurs performances.</p>
-            </div>
-          </div>
         </div>
-
-        <div class="history-images">
-          <div class="history-image">
-            <img src="https://images.unsplash.com/photo-1569163139394-de44cb2c8cb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Vintage telecommunications equipment">
-            <div class="image-caption">Équipements historiques (1970s)</div>
-          </div>
-          <div class="history-image">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80" alt="Modern telecommunications infrastructure">
-            <div class="image-caption">Infrastructures modernes (2020s)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
 
 
   <section class="partners-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Nos Partenaires Stratégiques</h2>
-        <p class="section-subtitle">Nous collaborons avec les leaders mondiaux pour vous offrir les solutions les plus innovantes et performantes</p>
+        <h2 class="section-title">Nos Partenaires Majeurs</h2>
+        <p class="section-subtitle">Nous collaborons avec les leaders mondiaux afin d’offrir à nos clients les solutions les plus innovantes et performantes.</p>
       </div>
       <div class="partners-grid">
         <!-- Partner 1 -->
@@ -535,7 +669,7 @@
   <section class="informations-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Informations & Actualités</h2>
+        <h2 class="section-title">Publications</h2>
         <p class="section-subtitle">Découvrez les dernières nouvelles, événements et réalisations de EPE RETELEM SPA</p>
       </div>
       <div class="informations-grid">
@@ -724,57 +858,254 @@
     </div>
   </div>
 
+<!-- Newsletter Detail Modal -->
+<div id="newsletterModal" class="modal newsletter-modal">
+    <div class="modal-content newsletter-modal-content">
+        <button class="modal-close" id="newsletterModalClose">&times;</button>
+        <div class="newsletter-header">
+            <div class="newsletter-category" id="modalCategory">Innovations</div>
+            <h1 id="modalTitle">Titre de la newsletter</h1>
+            <div class="newsletter-meta">
+                <span id="modalDate"><i class="far fa-calendar"></i> 15 Mars 2024</span>
+                <span id="modalType"><i class="far fa-file-alt"></i> Article</span>
+            </div>
+        </div>
+        
+        <div class="newsletter-hero">
+            <img id="modalImage" src="" alt="Newsletter image">
+        </div>
+        
+        <div class="newsletter-body">
+            <div class="newsletter-content" id="modalContent">
+                <!-- Content will be loaded here -->
+            </div>
+            
+            <div class="newsletter-sidebar">
+                <div class="related-news">
+                    <h3>Actualités similaires</h3>
+                    <div id="relatedNews">
+                        <!-- Related news will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="newsletter-actions">
+                    <button class="btn btn-primary" onclick="shareNewsletter()">
+                        <i class="fas fa-share"></i> Partager
+                    </button>
+                    <button class="btn btn-outline" onclick="printNewsletter()">
+                        <i class="fas fa-print"></i> Imprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- News Archive Modal -->
+<div id="newsArchiveModal" class="modal news-archive-modal">
+    <div class="modal-content news-archive-content">
+        <div class="archive-header">
+            <div class="archive-title">
+                <h2><i class="fas fa-newspaper"></i> Toutes nos actualités</h2>
+                <p>Découvrez l'ensemble de nos publications, projets et innovations</p>
+            </div>
+            <button class="modal-close" id="archiveModalClose">&times;</button>
+        </div>
+        
+        <div class="archive-controls">
+            <div class="archive-search">
+                <input type="text" id="archiveSearch" placeholder="Rechercher dans les actualités...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="archive-filters">
+                <select id="categoryFilter">
+                    <option value="all">Toutes les catégories</option>
+                    <option value="projects">Projets</option>
+                    <option value="events">Événements</option>
+                    <option value="partnerships">Partenariats</option>
+                    <option value="innovations">Innovations</option>
+                </select>
+                <select id="sortFilter">
+                    <option value="newest">Plus récent</option>
+                    <option value="oldest">Plus ancien</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="archive-stats">
+            <span id="totalNews">0 actualités</span>
+            <span id="currentPage">Page 1</span>
+        </div>
+        
+        <div class="archive-grid" id="archiveGrid">
+            <!-- News items will be loaded here -->
+        </div>
+        
+        <div class="archive-pagination" id="archivePagination">
+            <!-- Pagination will be generated here -->
+        </div>
+    </div>
+</div>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h3>EPE RETELEM SPA</h3>
-          <p>Leader en solutions de télécommunications et sécurité en Algérie avec plus de 50 ans d'expérience.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="EPE RETELEM SPA" class="brand-logo">
+          <span class="brand-name">EPE RETELEM SPA</span>
+        </div>
+        <p class="footer-description">
+          Leader en solutions de télécommunications et sécurité en Algérie avec plus de 50 ans d'expérience.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#accueil" class="footer-link nav-link">Accueil</a></li>
+            <li><a href="#notre-societe" class="footer-link nav-link">Notre Société</a></li>
+            <li><a href="#services-section" class="footer-link nav-link">Nos activités</a></li>
+            <li><a href="#partners-section" class="footer-link nav-link">Nos partenaires</a></li>
+            <li><a href="#news-gallery-section" class="footer-link nav-link">Actualités</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services-section" data-service="1" class="footer-link service-sub-link">Réseaux & Télécoms</a></li>
+            <li><a href="#services-section" data-service="2" class="footer-link service-sub-link">Cybersécurité</a></li>
+            <li><a href="#services-section" data-service="3" class="footer-link service-sub-link">Vidéosurveillance</a></li>
+            <li><a href="#services-section" data-service="4" class="footer-link service-sub-link">Systèmes d'information</a></li>
+            <li><a href="#services-section" data-service="5" class="footer-link service-sub-link">Formation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Contact</h4>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <span>54, Rue Omar Ben Aissa, Bab El Oued, Alger</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone contact-icon"></i>
+              <span>+213 XX XX XX XX XX</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope contact-icon"></i>
+              <span>contact@retelem.dz</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock contact-icon"></i>
+              <span>Dimanche - Jeudi: 8:00 - 17:00</span>
+            </div>
           </div>
         </div>
-        <div class="footer-column">
-          <h3>Liens rapides</h3>
-          <ul class="footer-links">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Notre Société</a></li>
-            <li><a href="#">Nos activités</a></li>
-            <li><a href="#">Nos partenaires</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Newsletter</h4>
+          <div class="newsletter-form">
+            <p>Restez informé de nos dernières actualités</p>
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="Votre email" class="newsletter-input">
+              <button class="newsletter-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="footer-column">
-          <h3>Nos services</h3>
-          <ul class="footer-links">
-            <li><a href="#">Réseaux & Télécoms</a></li>
-            <li><a href="#">Cybersécurité</a></li>
-            <li><a href="#">Vidéosurveillance</a></li>
-            <li><a href="#">Systèmes d'information</a></li>
-            <li><a href="#">Formation</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3>Contact</h3>
-          <ul class="contact-info">
-            <li><i class="fas fa-map-marker-alt"></i> Adresse de l'entreprise, Ville, Algérie</li>
-            <li><i class="fas fa-phone"></i> +213 XX XX XX XX XX</li>
-            <li><i class="fas fa-envelope"></i> contact@retelem.dz</li>
-            <li><i class="fas fa-clock"></i> Lun - Ven: 8:00 - 17:00</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2023 EPE RETELEM SPA. Tous droits réservés.</p>
       </div>
     </div>
-  </footer>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">&copy; 2024 EPE RETELEM SPA. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="#" class="legal-link">Politique de confidentialité</a>
+          <a href="#" class="legal-link">Mentions légales</a>
+          <a href="#" class="legal-link">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+ 
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('.site-header');
+  const nav = document.getElementById('primary-nav');
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const hasSubs = document.querySelectorAll('.has-submenu > a');
+
+  // Sticky header functionality
+  function handleScroll() {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+
+  // Mobile menu toggle
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // On mobile: toggle submenus when clicking a parent item
+  function isMobile() {
+    return window.innerWidth < 900;
+  }
+
+  hasSubs.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (isMobile()) {
+        e.preventDefault();
+        const parent = link.parentElement;
+        const submenu = parent.querySelector('.submenu');
+        const expanded = parent.classList.toggle('submenu-open');
+        link.setAttribute('aria-expanded', String(expanded));
+        
+        if (submenu) {
+          submenu.classList.toggle('open');
+        }
+      }
+    });
+  });
+  
+  // Initialize mobile submenu state
+  if (isMobile()) {
+    document.querySelectorAll('.submenu').forEach(s => s.style.display = 'none');
+  }
+
+  // Add scroll event listener for sticky header
+  window.addEventListener('scroll', handleScroll);
+  
+  // Initialize header state
+  handleScroll();
+});
+</script>
+
     <script>
     document.addEventListener('DOMContentLoaded', function () {
       const nav = document.getElementById('primary-nav');
@@ -1546,240 +1877,488 @@
     });
   </script>
 
-    <script>
-        const newsData = {
-            featured: [
-                {
-                    id: 1,
-                    title: "Inauguration du nouveau centre de formation en cybersécurité",
-                    excerpt: "Nous sommes fiers d'annoncer l'ouverture de notre centre de formation spécialisé en cybersécurité, équipé des dernières technologies pour former les experts de demain.",
-                    category: "innovations",
-                    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
-                    date: "15 Mars 2024",
-                    type: "Article"
-                },
-                {
-                    id: 2,
-                    title: "Partenariat stratégique avec Cisco pour les infrastructures réseau",
-                    excerpt: "Signature d'un nouveau partenariat avec Cisco pour développer des solutions réseau innovantes pour les entreprises algériennes.",
-                    category: "partnerships",
-                    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop",
-                    date: "10 Mars 2024",
-                    type: "Communiqué"
-                },
-                {
-                    id: 3,
-                    title: "Lancement du projet de ville intelligente à Alger",
-                    excerpt: "Nous déployons une infrastructure complète de ville intelligente intégrant surveillance, connectivité et gestion des données.",
-                    category: "projects",
-                    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=600&fit=crop",
-                    date: "5 Mars 2024",
-                    type: "Projet"
-                }
-            ],
-            regular: [
-                {
-                    id: 4,
-                    title: "Formation certifiante en réseaux avancés",
-                    excerpt: "Notre centre de formation propose une nouvelle certification en réseaux avancés pour les professionnels du secteur.",
-                    category: "innovations",
-                    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
-                    date: "28 Février 2024",
-                    type: "Formation"
-                },
-                {
-                    id: 5,
-                    title: "Participation au Salon International des Télécoms",
-                    excerpt: "Retour sur notre participation au SIT 2024 où nous avons présenté nos dernières innovations en matière de connectivité.",
-                    category: "events",
-                    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
-                    date: "20 Février 2024",
-                    type: "Événement"
-                },
-                {
-                    id: 6,
-                    title: "Déploiement de la fibre optique dans 10 nouvelles wilayas",
-                    excerpt: "Extension de notre réseau fibre optique pour couvrir 10 nouvelles wilayas et améliorer la connectivité nationale.",
-                    category: "projects",
-                    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
-                    date: "15 Février 2024",
-                    type: "Projet"
-                },
-                {
-                    id: 7,
-                    title: "Nouvelle solution de vidéosurveillance IA",
-                    excerpt: "Lancement de notre nouvelle solution de vidéosurveillance intelligente avec reconnaissance faciale et analytique avancée.",
-                    category: "innovations",
-                    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&h=600&fit=crop",
-                    date: "10 Février 2024",
-                    type: "Innovation"
-                },
-                {
-                    id: 8,
-                    title: "Partenariat avec le ministère de l'Éducation",
-                    excerpt: "Collaboration avec le ministère pour équiper 100 écoles avec des solutions réseau et de sécurité avancées.",
-                    category: "partnerships",
-                    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
-                    date: "5 Février 2024",
-                    type: "Partenariat"
-                },
-                {
-                    id: 9,
-                    title: "Webinaire sur la transformation digitale",
-                    excerpt: "Replay disponible de notre webinaire sur les enjeux de la transformation digitale pour les entreprises algériennes.",
-                    category: "events",
-                    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop",
-                    date: "1 Février 2024",
-                    type: "Webinaire"
-                }
-            ]
-        };
 
-        document.addEventListener('DOMContentLoaded', function() {
-            initHeroCarousel();
-            initNewsGrid();
-            initTabs();
-            initSearch();
-            init3DCardEffects();
+<script>
+    const newsData = {
+        featured: [
+            {
+                id: 1,
+                title: "Inauguration du nouveau centre de formation en cybersécurité",
+                excerpt: "Nous sommes fiers d'annoncer l'ouverture de notre centre de formation spécialisé en cybersécurité, équipé des dernières technologies pour former les experts de demain.",
+                category: "innovations",
+                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
+                date: "15 Mars 2024",
+                type: "Article"
+            },
+            {
+                id: 2,
+                title: "Partenariat stratégique avec Cisco pour les infrastructures réseau",
+                excerpt: "Signature d'un nouveau partenariat avec Cisco pour développer des solutions réseau innovantes pour les entreprises algériennes.",
+                category: "partnerships",
+                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop",
+                date: "10 Mars 2024",
+                type: "Communiqué"
+            },
+            {
+                id: 3,
+                title: "Lancement du projet de ville intelligente à Alger",
+                excerpt: "Nous déployons une infrastructure complète de ville intelligente intégrant surveillance, connectivité et gestion des données.",
+                category: "projects",
+                image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=600&fit=crop",
+                date: "5 Mars 2024",
+                type: "Projet"
+            }
+        ],
+        regular: [
+            {
+                id: 4,
+                title: "Formation certifiante en réseaux avancés",
+                excerpt: "Notre centre de formation propose une nouvelle certification en réseaux avancés pour les professionnels du secteur.",
+                category: "innovations",
+                image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+                date: "28 Février 2024",
+                type: "Formation"
+            },
+            {
+                id: 5,
+                title: "Participation au Salon International des Télécoms",
+                excerpt: "Retour sur notre participation au SIT 2024 où nous avons présenté nos dernières innovations en matière de connectivité.",
+                category: "events",
+                image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+                date: "20 Février 2024",
+                type: "Événement"
+            },
+            {
+                id: 6,
+                title: "Déploiement de la fibre optique dans 10 nouvelles wilayas",
+                excerpt: "Extension de notre réseau fibre optique pour couvrir 10 nouvelles wilayas et améliorer la connectivité nationale.",
+                category: "projects",
+                image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+                date: "15 Février 2024",
+                type: "Projet"
+            },
+            {
+                id: 7,
+                title: "Nouvelle solution de vidéosurveillance IA",
+                excerpt: "Lancement de notre nouvelle solution de vidéosurveillance intelligente avec reconnaissance faciale et analytique avancée.",
+                category: "innovations",
+                image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&h=600&fit=crop",
+                date: "10 Février 2024",
+                type: "Innovation"
+            },
+            {
+                id: 8,
+                title: "Partenariat avec le ministère de l'Éducation",
+                excerpt: "Collaboration avec le ministère pour équiper 100 écoles avec des solutions réseau et de sécurité avancées.",
+                category: "partnerships",
+                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
+                date: "5 Février 2024",
+                type: "Partenariat"
+            },
+            {
+                id: 9,
+                title: "Webinaire sur la transformation digitale",
+                excerpt: "Replay disponible de notre webinaire sur les enjeux de la transformation digitale pour les entreprises algériennes.",
+                category: "events",
+                image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop",
+                date: "1 Février 2024",
+                type: "Webinaire"
+            }
+        ]
+    };
+
+    const newsletterDetails = {
+        1: {
+            title: "Inauguration du nouveau centre de formation en cybersécurité",
+            category: "innovations",
+            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
+            date: "15 Mars 2024",
+            type: "Article",
+            content: `
+                <h2>Une nouvelle ère pour la formation en cybersécurité en Algérie</h2>
+                <p>Nous sommes extrêmement fiers d'annoncer l'ouverture officielle de notre centre de formation spécialisé en cybersécurité, un investissement majeur dans l'avenir numérique de notre pays.</p>
+                
+                <h3>Équipements de pointe</h3>
+                <p>Le centre dispose des dernières technologies en matière de sécurité informatique :</p>
+                <ul>
+                    <li>Laboratoires de simulation d'attaques cybernétiques</li>
+                    <li>Environnements de test sécurisés</li>
+                    <li>Plateformes de formation en réalité virtuelle</li>
+                    <li>Salles de war room pour les exercices pratiques</li>
+                </ul>
+                
+                <h3>Programmes de formation</h3>
+                <p>Nous proposons des certifications reconnues internationalement :</p>
+                <ul>
+                    <li>Expert en sécurité des réseaux</li>
+                    <li>Spécialiste en forensic digital</li>
+                    <li>Architecte de solutions de sécurité cloud</li>
+                    <li>Analyste en threat intelligence</li>
+                </ul>
+                
+                <blockquote>
+                    "Ce centre représente un investissement stratégique pour renforcer les compétences nationales en cybersécurité et protéger notre souveraineté numérique."
+                    <cite>— M. Kamel Benchlef, PDG de RETELEM</cite>
+                </blockquote>
+            `
+        },
+        2: {
+            title: "Partenariat stratégique avec Cisco pour les infrastructures réseau",
+            category: "partnerships",
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop",
+            date: "10 Mars 2024",
+            type: "Communiqué",
+            content: `
+                <h2>Renforcement de notre écosystème technologique</h2>
+                <p>RETELEM et Cisco unissent leurs forces pour développer des solutions réseau innovantes adaptées au marché algérien.</p>
+                
+                <h3>Objectifs du partenariat</h3>
+                <ul>
+                    <li>Développement de solutions réseau sur mesure pour les entreprises algériennes</li>
+                    <li>Transfert de technologie et de savoir-faire</li>
+                    <li>Formation et certification des équipes techniques</li>
+                    <li>Support technique avancé 24/7</li>
+                </ul>
+                
+                <h3>Bénéfices pour nos clients</h3>
+                <p>Ce partenariat nous permet d'offrir :</p>
+                <ul>
+                    <li>Accès aux dernières technologies Cisco</li>
+                    <li>Support technique certifié</li>
+                    <li>Solutions évolutives et sécurisées</li>
+                    <li>Maintenance proactive des infrastructures</li>
+                </ul>
+            `
+        },
+        3: {
+            title: "Lancement du projet de ville intelligente à Alger",
+            category: "projects",
+            image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=600&fit=crop",
+            date: "5 Mars 2024",
+            type: "Projet",
+            content: `
+                <h2>Transformer Alger en ville intelligente et connectée</h2>
+                <p>Déploiement d'une infrastructure complète intégrant surveillance, connectivité et gestion des données pour une ville plus intelligente.</p>
+                <p>Ce projet ambitieux vise à moderniser la capitale algérienne avec des technologies de pointe qui amélioreront la qualité de vie des citoyens et optimiseront la gestion urbaine.</p>
+                
+                <h3>Composantes du projet</h3>
+                <ul>
+                    <li>Réseau de capteurs IoT pour la surveillance environnementale</li>
+                    <li>Système de gestion intelligente du trafic</li>
+                    <li>Éclairage public connecté et éco-énergétique</li>
+                    <li>Plateforme de données centralisée pour les services municipaux</li>
+                </ul>
+            `
+        },
+        4: {
+            title: "Formation certifiante en réseaux avancés",
+            category: "innovations",
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+            date: "28 Février 2024",
+            type: "Formation",
+            content: `
+                <h2>Excellence dans la formation aux réseaux avancés</h2>
+                <p>Notre centre de formation élargit son offre avec une nouvelle certification en réseaux avancés, répondant aux besoins croissants du marché.</p>
+                
+                <h3>Programme de certification</h3>
+                <ul>
+                    <li>Architecture des réseaux SD-WAN</li>
+                    <li>Sécurité des réseaux d'entreprise</li>
+                    <li>Virtualisation des fonctions réseau (NFV)</li>
+                    <li>Automatisation et orchestration</li>
+                </ul>
+            `
+        },
+        5: {
+            title: "Participation au Salon International des Télécoms",
+            category: "events",
+            image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+            date: "20 Février 2024",
+            type: "Événement",
+            content: `
+                <h2>RETELEM brille au Salon International des Télécoms 2024</h2>
+                <p>Notre participation au SIT 2024 a été marquée par la présentation de nos innovations majeures en matière de connectivité et de solutions digitales.</p>
+            `
+        },
+        6: {
+            title: "Déploiement de la fibre optique dans 10 nouvelles wilayas",
+            category: "projects",
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+            date: "15 Février 2024",
+            type: "Projets",
+            content: `
+                <h2>Extension massive du réseau fibre optique</h2>
+                <p>Notre programme d'extension du réseau fibre optique touche 10 nouvelles wilayas pour améliorer la connectivité nationale.</p>
+            `
+        },
+        7: {
+            title: "Nouvelle solution de vidéosurveillance IA",
+            category: "innovations",
+            image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&h=600&fit=crop",
+            date: "10 Février 2024",
+            type: "Innovation",
+            content: `
+                <h2>Intelligence artificielle au service de la sécurité</h2>
+                <p>Lancement de notre solution de vidéosurveillance intelligente avec reconnaissance faciale et analytique avancée.</p>
+            `
+        },
+        8: {
+            title: "Partenariat avec le ministère de l'Éducation",
+            category: "partnerships",
+            image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
+            date: "5 Février 2024",
+            type: "Partenariat",
+            content: `
+                <h2>Digitalisation du secteur éducatif</h2>
+                <p>Collaboration avec le ministère pour équiper 100 écoles avec des solutions réseau et de sécurité avancées.</p>
+            `
+        },
+        9: {
+            title: "Webinaire sur la transformation digitale",
+            category: "events",
+            image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop",
+            date: "1 Février 2024",
+            type: "Webinaire",
+            content: `
+                <h2>Transformation digitale : enjeux et opportunités</h2>
+                <p>Replay disponible de notre webinaire sur les enjeux de la transformation digitale pour les entreprises algériennes.</p>
+            `
+        }
+    };
+
+    // Main initialization
+    document.addEventListener('DOMContentLoaded', function() {
+        initHeroCarousel();
+        initNewsGrid();
+        initTabs();
+        initSearch();
+        init3DCardEffects();
+        initNewsletterModal();
+    });
+
+    // Newsletter Modal Functions
+    function initNewsletterModal() {
+        const closeBtn = document.getElementById('newsletterModalClose');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeNewsletterModal);
+        }
+        
+        const modal = document.getElementById('newsletterModal');
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeNewsletterModal();
+                }
+            });
+        }
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeNewsletterModal();
+            }
         });
+    }
 
-        function initHeroCarousel() {
-            const carousel = document.getElementById('heroCarousel');
-            const dotsContainer = document.getElementById('heroDots');
-            
-            newsData.featured.forEach((item, index) => {
-                const slide = document.createElement('div');
-                slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
-                slide.innerHTML = `
-                    <div class="hero-bg" style="background-image: url('${item.image}')"></div>
-                    <div class="hero-content">
-                        <span class="hero-category">${item.category}</span>
-                        <h3 class="hero-title">${item.title}</h3>
-                        <p class="hero-excerpt">${item.excerpt}</p>
-                        <div class="hero-meta">
-                            <span><i class="far fa-calendar"></i> ${item.date}</span>
-                            <span><i class="far fa-file-alt"></i> ${item.type}</span>
-                        </div>
-                        <div class="hero-cta">
-                            <button class="hero-btn">
-                                Lire l'article <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-                carousel.insertBefore(slide, carousel.firstChild);
-                
-                const dot = document.createElement('div');
-                dot.className = `hero-dot ${index === 0 ? 'active' : ''}`;
-                dot.dataset.index = index;
-                dot.addEventListener('click', () => goToSlide(index));
-                dotsContainer.appendChild(dot);
-            });
-            
-            const slides = document.querySelectorAll('.hero-slide');
-            const dots = document.querySelectorAll('.hero-dot');
-            let currentSlide = 0;
-            
-            document.getElementById('heroNext').addEventListener('click', nextSlide);
-            document.getElementById('heroPrev').addEventListener('click', prevSlide);
-            
-            let slideInterval = setInterval(nextSlide, 6000);
-            
-            carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
-            carousel.addEventListener('mouseleave', () => {
-                slideInterval = setInterval(nextSlide, 6000);
-            });
-            
-            function nextSlide() {
-                goToSlide((currentSlide + 1) % slides.length);
-            }
-            
-            function prevSlide() {
-                goToSlide((currentSlide - 1 + slides.length) % slides.length);
-            }
-            
-            function goToSlide(index) {
-                slides[currentSlide].classList.remove('active');
-                dots[currentSlide].classList.remove('active');
-                
-                currentSlide = index;
-                
-                slides[currentSlide].classList.add('active');
-                dots[currentSlide].classList.add('active');
-            }
+    function openNewsletter(id) {
+        const newsletter = newsletterDetails[id];
+        if (!newsletter) {
+            console.warn('Newsletter not found for id:', id);
+            return;
         }
-
-        function initNewsGrid() {
-            const grid = document.getElementById('newsGrid');
-            
-            newsData.regular.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'news-card';
-                card.dataset.category = item.category;
-                card.innerHTML = `
-                    <div class="news-card-image">
-                        <img src="${item.image}" alt="${item.title}">
-                        <div class="news-card-overlay"></div>
-                        <span class="news-card-category">${item.category}</span>
-                    </div>
-                    <div class="news-card-content">
-                        <h3 class="news-card-title">${item.title}</h3>
-                        <p class="news-card-excerpt">${item.excerpt}</p>
-                        <div class="news-card-meta">
-                            <span><i class="far fa-calendar"></i> ${item.date}</span>
-                            <span><i class="far fa-file-alt"></i> ${item.type}</span>
-                        </div>
-                    </div>
-                    <div class="news-card-action">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
+        
+        const modal = document.getElementById('newsletterModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalCategory = document.getElementById('modalCategory');
+        const modalDate = document.getElementById('modalDate');
+        const modalType = document.getElementById('modalType');
+        const modalImage = document.getElementById('modalImage');
+        const modalContent = document.getElementById('modalContent');
+        
+        if (!modal || !modalTitle || !modalCategory || !modalDate || !modalType || !modalImage || !modalContent) {
+            console.error('Newsletter modal elements not found');
+            return;
         }
+        
+        modalTitle.textContent = newsletter.title;
+        modalCategory.textContent = newsletter.category;
+        modalDate.innerHTML = `<i class="far fa-calendar"></i> ${newsletter.date}`;
+        modalType.innerHTML = `<i class="far fa-file-alt"></i> ${newsletter.type}`;
+        modalImage.src = newsletter.image;
+        modalImage.alt = newsletter.title;
+        modalContent.innerHTML = newsletter.content;
+        
+        loadRelatedNews(id, newsletter.category);
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-        function initTabs() {
-            const tabs = document.querySelectorAll('.news-tab');
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const category = this.dataset.category;
-                    const cards = document.querySelectorAll('.news-card');
-                    
-                    cards.forEach(card => {
-                        if (category === 'all' || card.dataset.category === category) {
-                            card.style.display = 'block';
-                            setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.transform = 'translateY(0)';
-                            }, 10);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
+    function loadRelatedNews(currentId, category) {
+        const relatedContainer = document.getElementById('relatedNews');
+        if (!relatedContainer) return;
+        
+        const relatedNews = newsData.regular.filter(item => 
+            item.id !== currentId && item.category === category
+        ).slice(0, 3);
+        
+        relatedContainer.innerHTML = relatedNews.map(item => `
+            <div class="related-item" onclick="openNewsletter(${item.id})">
+                <img src="${item.image}" alt="${item.title}">
+                <div class="related-content">
+                    <h4>${item.title}</h4>
+                    <span>${item.date}</span>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function closeNewsletterModal() {
+        const modal = document.getElementById('newsletterModal');
+        if (modal) {
+            modal.classList.remove('active');
         }
+        document.body.style.overflow = 'auto';
+    }
 
-        function initSearch() {
-            const searchInput = document.querySelector('.news-search input');
+    function shareNewsletter() {
+        const title = document.getElementById('modalTitle').textContent;
+        const url = window.location.href;
+        
+        if (navigator.share) {
+            navigator.share({
+                title: title,
+                url: url
+            });
+        } else {
+            navigator.clipboard.writeText(url);
+            alert('Lien copié dans le presse-papier !');
+        }
+    }
+
+    function printNewsletter() {
+        window.print();
+    }
+
+    // Hero Carousel Functions
+    function initHeroCarousel() {
+        const carousel = document.getElementById('heroCarousel');
+        const dotsContainer = document.getElementById('heroDots');
+        
+        if (!carousel || !dotsContainer) return;
+        
+        newsData.featured.forEach((item, index) => {
+            const slide = document.createElement('div');
+            slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
+            slide.innerHTML = `
+                <div class="hero-bg" style="background-image: url('${item.image}')"></div>
+                <div class="hero-content">
+                    <span class="hero-category">${item.category}</span>
+                    <h3 class="hero-title">${item.title}</h3>
+                    <p class="hero-excerpt">${item.excerpt}</p>
+                    <div class="hero-meta">
+                        <span><i class="far fa-calendar"></i> ${item.date}</span>
+                        <span><i class="far fa-file-alt"></i> ${item.type}</span>
+                    </div>
+                    <div class="hero-cta">
+                        <button class="hero-btn" onclick="openNewsletter(${item.id})">
+                            Lire l'article <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            carousel.insertBefore(slide, carousel.firstChild);
             
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
+            const dot = document.createElement('div');
+            dot.className = `hero-dot ${index === 0 ? 'active' : ''}`;
+            dot.dataset.index = index;
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+        let currentSlide = 0;
+        
+        const nextBtn = document.getElementById('heroNext');
+        const prevBtn = document.getElementById('heroPrev');
+        
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        
+        let slideInterval = setInterval(nextSlide, 6000);
+        
+        carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        carousel.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 6000);
+        });
+        
+        function nextSlide() {
+            goToSlide((currentSlide + 1) % slides.length);
+        }
+        
+        function prevSlide() {
+            goToSlide((currentSlide - 1 + slides.length) % slides.length);
+        }
+        
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = index;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+    }
+
+    // News Grid Functions
+    function initNewsGrid() {
+        const grid = document.getElementById('newsGrid');
+        if (!grid) return;
+        
+        newsData.regular.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'news-card';
+            card.dataset.category = item.category;
+            card.dataset.id = item.id;
+            card.innerHTML = `
+                <div class="news-card-image">
+                    <img src="${item.image}" alt="${item.title}">
+                    <div class="news-card-overlay"></div>
+                    <span class="news-card-category">${item.category}</span>
+                </div>
+                <div class="news-card-content">
+                    <h3 class="news-card-title">${item.title}</h3>
+                    <p class="news-card-excerpt">${item.excerpt}</p>
+                    <div class="news-card-meta">
+                        <span><i class="far fa-calendar"></i> ${item.date}</span>
+                        <span><i class="far fa-file-alt"></i> ${item.type}</span>
+                    </div>
+                </div>
+                <div class="news-card-action">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            `;
+            
+            card.addEventListener('click', () => openNewsletter(item.id));
+            grid.appendChild(card);
+        });
+    }
+
+    // Tab Functions
+    function initTabs() {
+        const tabs = document.querySelectorAll('.news-tab');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
                 const cards = document.querySelectorAll('.news-card');
                 
                 cards.forEach(card => {
-                    const title = card.querySelector('.news-card-title').textContent.toLowerCase();
-                    const excerpt = card.querySelector('.news-card-excerpt').textContent.toLowerCase();
-                    
-                    if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    if (category === 'all' || card.dataset.category === category) {
                         card.style.display = 'block';
                         setTimeout(() => {
                             card.style.opacity = '1';
@@ -1794,36 +2373,551 @@
                     }
                 });
             });
-        }
+        });
+    }
 
-        function init3DCardEffects() {
+    // Search Functions
+    function initSearch() {
+        const searchInput = document.querySelector('.news-search input');
+        if (!searchInput) return;
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
             const cards = document.querySelectorAll('.news-card');
             
             cards.forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = (y - centerY) / 20;
-                    const rotateY = (centerX - x) / 20;
-                    
-                    card.style.transform = `
-                        translateY(-15px) 
-                        rotateX(${rotateX}deg) 
-                        rotateY(${rotateY}deg)
-                        scale(1.02)
-                    `;
-                });
+                const title = card.querySelector('.news-card-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.news-card-excerpt').textContent.toLowerCase();
                 
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0) rotateX(0) rotateY(0) scale(1)';
-                });
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
             });
+        });
+    }
+
+    // 3D Card Effects
+    function init3DCardEffects() {
+        const cards = document.querySelectorAll('.news-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                card.style.transform = `
+                    translateY(-15px) 
+                    rotateX(${rotateX}deg) 
+                    rotateY(${rotateY}deg)
+                    scale(1.02)
+                `;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+    }
+</script>
+    
+    
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scroll to section and open modal
+  function scrollToSectionAndOpenModal(sectionId, serviceId = null) {
+    const section = document.querySelector(sectionId);
+    if (section) {
+      // Smooth scroll to section
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // If serviceId is provided, open the modal after scroll
+      if (serviceId) {
+        setTimeout(() => {
+          openServiceModal(serviceId);
+        }, 800); // Wait for scroll to complete
+      }
+    }
+  }
+
+  // Function to open service modal
+  function openServiceModal(serviceId) {
+    const serviceModal = document.getElementById('serviceModal');
+    const serviceModalTitle = document.getElementById('serviceModalTitle');
+    const serviceModalIcon = document.getElementById('serviceModalIcon');
+    const serviceModalDescription = document.getElementById('serviceModalDescription');
+    const serviceModalFeatures = document.getElementById('serviceModalFeatures');
+    const serviceModalImage = document.getElementById('serviceModalImage');
+    
+    // Get service data (assuming serviceData is already defined in your code)
+    const service = serviceData[serviceId];
+    
+    if (service && serviceModal) {
+      serviceModalTitle.textContent = service.title;
+      serviceModalIcon.innerHTML = service.icon;
+      serviceModalDescription.textContent = service.description;
+      serviceModalImage.src = service.image;
+      serviceModalImage.alt = service.title;
+      
+      // Clear and add features
+      serviceModalFeatures.innerHTML = '';
+      service.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        serviceModalFeatures.appendChild(li);
+      });
+      
+      // Show modal
+      serviceModal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  // Handle "Notre Société" and its submenu items
+  const notreSocieteLinks = document.querySelectorAll('a[href="#notre-societe"], a[href="#notre-histoire"], a[href="#nos-valeurs"], a[href="#notre-engagement"], a[href="#qualite"], a[href="#nos-atouts"]');
+  
+  notreSocieteLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      // All redirect to history section
+      scrollToSectionAndOpenModal('.history-section');
+      // Close mobile menu if open
+      document.getElementById('primary-nav').classList.remove('open');
+      document.querySelector('.mobile-nav-toggle').classList.remove('active');
+    });
+  });
+
+  // Handle service submenu items
+  const serviceSubLinks = document.querySelectorAll('.service-sub-link');
+  
+  serviceSubLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const serviceId = this.getAttribute('data-service');
+      // Scroll to services section and open modal
+      scrollToSectionAndOpenModal('.services-section', serviceId);
+      // Close mobile menu if open
+      document.getElementById('primary-nav').classList.remove('open');
+      document.querySelector('.mobile-nav-toggle').classList.remove('active');
+    });
+  });
+
+  // Handle other navigation links (existing ones)
+  const otherNavLinks = document.querySelectorAll('a[href="#accueil"], a[href="#partenaires-section"], a[href="#actualites-section"], a[href="#contact-section"]');
+  
+  otherNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      
+      // Map href to actual sections
+      const sectionMap = {
+        '#accueil': '.hero1',
+        '#partenaires-section': '.partners-section',
+        '#actualites-section': '.news-gallery-section',
+        '#contact-section': '.site-footer' // or create a contact section
+      };
+      
+      const sectionSelector = sectionMap[targetId];
+      if (sectionSelector) {
+        scrollToSectionAndOpenModal(sectionSelector);
+      }
+      
+      // Close mobile menu if open
+      document.getElementById('primary-nav').classList.remove('open');
+      document.querySelector('.mobile-nav-toggle').classList.remove('active');
+    });
+  });
+
+  // Also handle clicks on service cards in the main section
+  const serviceCards = document.querySelectorAll('.service-card .btn[data-service]');
+  serviceCards.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent event bubbling
+      const serviceId = this.getAttribute('data-service');
+      openServiceModal(serviceId);
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.site-header');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+  const headerSearch = document.getElementById('headerSearch');
+
+  // ===== HEADER SCROLL ANIMATION =====
+  function handleScroll() {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initialize on load
+
+  // ===== MOBILE SEARCH TOGGLE =====
+  if (mobileSearchToggle) {
+    mobileSearchToggle.addEventListener('click', function() {
+      headerSearch.classList.toggle('mobile-active');
+    });
+  }
+
+  // ===== SEARCH FUNCTIONALITY =====
+  
+  // Searchable content database
+  const searchableContent = [
+    // Services
+    { title: 'Intégration Systèmes d\'information & Réseaux', type: 'Service', action: 'service', id: 1 },
+    { title: 'Solutions Voix & Télécommunications', type: 'Service', action: 'service', id: 2 },
+    { title: 'Vidéosurveillance & Contrôle d\'Accès', type: 'Service', action: 'service', id: 3 },
+    { title: 'Systèmes diffusion & TNT', type: 'Service', action: 'service', id: 4 },
+    { title: 'Systèmes de Détection & Protection Incendie', type: 'Service', action: 'service', id: 5 },
+    { title: 'Solutions de Transmission & Infrastructure de Communication', type: 'Service', action: 'service', id: 6 },
+    { title: 'Cybersécurité', type: 'Service', action: 'service', id: 7 },
+    { title: 'Centre de formation professionnelle', type: 'Service', action: 'service', id: 8 },
+    
+    // Partners
+    { title: 'Cisco Systems', type: 'Partenaire', action: 'partner', id: 1 },
+    { title: 'Microsoft', type: 'Partenaire', action: 'partner', id: 2 },
+    { title: 'Hewlett Packard Enterprise', type: 'Partenaire', action: 'partner', id: 3 },
+    { title: 'IBM', type: 'Partenaire', action: 'partner', id: 4 },
+    { title: 'Dell Technologies', type: 'Partenaire', action: 'partner', id: 5 },
+    { title: 'Oracle', type: 'Partenaire', action: 'partner', id: 6 },
+    { title: 'VMware', type: 'Partenaire', action: 'partner', id: 7 },
+    { title: 'Aruba Networks', type: 'Partenaire', action: 'partner', id: 8 },
+    
+    // Sections
+    { title: 'Notre Histoire', type: 'Section', action: 'section', target: '.history-section' },
+    { title: 'Nos Services', type: 'Section', action: 'section', target: '.services-section' },
+    { title: 'Nos Partenaires', type: 'Section', action: 'section', target: '.partners-section' },
+    { title: 'Actualités', type: 'Section', action: 'section', target: '.news-gallery-section' },
+    { title: 'Contact', type: 'Section', action: 'section', target: '.site-footer' },
+  ];
+
+  // Search function
+  function performSearch(query) {
+    if (!query || query.trim().length < 2) {
+      searchResults.classList.remove('active');
+      return;
+    }
+
+    const normalizedQuery = query.toLowerCase().trim();
+    const results = searchableContent.filter(item => 
+      item.title.toLowerCase().includes(normalizedQuery)
+    );
+
+    displaySearchResults(results);
+  }
+
+  // Display search results
+  function displaySearchResults(results) {
+    if (results.length === 0) {
+      searchResults.innerHTML = '<div class="search-no-results">Aucun résultat trouvé</div>';
+      searchResults.classList.add('active');
+      return;
+    }
+
+    const resultsHTML = results.map(result => `
+      <div class="search-result-item" data-action="${result.action}" data-id="${result.id || ''}" data-target="${result.target || ''}">
+        <div class="search-result-title">${result.title}</div>
+        <div class="search-result-type">${result.type}</div>
+      </div>
+    `).join('');
+
+    searchResults.innerHTML = resultsHTML;
+    searchResults.classList.add('active');
+
+    // Add click handlers to results
+    document.querySelectorAll('.search-result-item').forEach(item => {
+      item.addEventListener('click', handleSearchResultClick);
+    });
+  }
+
+  // Handle search result click
+  function handleSearchResultClick(e) {
+    const action = this.getAttribute('data-action');
+    const id = this.getAttribute('data-id');
+    const target = this.getAttribute('data-target');
+
+    // Close search
+    searchResults.classList.remove('active');
+    searchInput.value = '';
+    headerSearch.classList.remove('mobile-active');
+
+    // Perform action
+    if (action === 'service') {
+      scrollToSectionAndOpenModal('.services-section', id);
+    } else if (action === 'partner') {
+      scrollToSectionAndOpenPartner('.partners-section', id);
+    } else if (action === 'section') {
+      scrollToSection(target);
+    }
+  }
+
+  // Search input event listener
+  searchInput.addEventListener('input', function() {
+    performSearch(this.value);
+  });
+
+  // Close search results when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!headerSearch.contains(e.target)) {
+      searchResults.classList.remove('active');
+    }
+  });
+
+  // ===== NAVIGATION FUNCTIONS =====
+
+  function scrollToSection(selector) {
+    const section = document.querySelector(selector);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function scrollToSectionAndOpenModal(sectionSelector, serviceId = null) {
+    const section = document.querySelector(sectionSelector);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      if (serviceId) {
+        setTimeout(() => {
+          openServiceModal(serviceId);
+        }, 800);
+      }
+    }
+  }
+
+  function scrollToSectionAndOpenPartner(sectionSelector, partnerId) {
+    const section = document.querySelector(sectionSelector);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      setTimeout(() => {
+        const partnerCard = document.querySelector(`[data-partner="${partnerId}"]`);
+        if (partnerCard) {
+          partnerCard.click();
         }
-    </script>
+      }, 800);
+    }
+  }
+
+  function openServiceModal(serviceId) {
+    const serviceModal = document.getElementById('serviceModal');
+    const serviceModalTitle = document.getElementById('serviceModalTitle');
+    const serviceModalIcon = document.getElementById('serviceModalIcon');
+    const serviceModalDescription = document.getElementById('serviceModalDescription');
+    const serviceModalFeatures = document.getElementById('serviceModalFeatures');
+    const serviceModalImage = document.getElementById('serviceModalImage');
+    
+    const service = serviceData[serviceId];
+    
+    if (service && serviceModal) {
+      serviceModalTitle.textContent = service.title;
+      serviceModalIcon.innerHTML = service.icon;
+      serviceModalDescription.textContent = service.description;
+      serviceModalImage.src = service.image;
+      serviceModalImage.alt = service.title;
+      
+      serviceModalFeatures.innerHTML = '';
+      service.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        serviceModalFeatures.appendChild(li);
+      });
+      
+      serviceModal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  // ===== NAVIGATION LINK HANDLERS =====
+
+  // Notre Société links
+  const notreSocieteLinks = document.querySelectorAll('a[href="#notre-societe"], a[href="#notre-histoire"], a[href="#nos-valeurs"], a[href="#notre-engagement"], a[href="#qualite"], a[href="#nos-atouts"]');
+  
+  notreSocieteLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      scrollToSection('.history-section');
+      closeMobileMenu();
+    });
+  });
+
+  // Service submenu items
+  const serviceSubLinks = document.querySelectorAll('.service-sub-link');
+  
+  serviceSubLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const serviceId = this.getAttribute('data-service');
+      scrollToSectionAndOpenModal('.services-section', serviceId);
+      closeMobileMenu();
+    });
+  });
+
+  // Other navigation links
+  const otherNavLinks = document.querySelectorAll('a[href="#accueil"], a[href="#partenaires-section"], a[href="#actualites-section"], a[href="#contact-section"]');
+  
+  otherNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      
+      const sectionMap = {
+        '#accueil': '.hero1',
+        '#partenaires-section': '.partners-section',
+        '#actualites-section': '.news-gallery-section',
+        '#contact-section': '.site-footer'
+      };
+      
+      const sectionSelector = sectionMap[targetId];
+      if (sectionSelector) {
+        scrollToSection(sectionSelector);
+      }
+      
+      closeMobileMenu();
+    });
+  });
+
+  // Brand logo click
+  document.querySelector('.brand').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Mobile menu toggle
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const nav = document.getElementById('primary-nav');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  function closeMobileMenu() {
+    nav.classList.remove('open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  // Submenu handling for mobile
+  const hasSubs = document.querySelectorAll('.has-submenu > a');
+  
+  hasSubs.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth < 900) {
+        e.preventDefault();
+        const parent = link.parentElement;
+        const submenu = parent.querySelector('.submenu');
+        const expanded = parent.classList.toggle('submenu-open');
+        link.setAttribute('aria-expanded', String(expanded));
+        
+        if (submenu) {
+          submenu.classList.toggle('open');
+        }
+      }
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        const popup = item.querySelector('.story-popup');
+        
+        item.addEventListener('mouseenter', () => {
+            popup.style.opacity = '1';
+            popup.style.visibility = 'visible';
+            // Calculate position relative to viewport if needed
+            const rect = item.getBoundingClientRect();
+            popup.style.top = `${rect.bottom + window.scrollY + 20}px`;
+            popup.style.left = `${rect.left + rect.width/2}px`;
+            popup.style.transform = 'translateX(-50%)';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            popup.style.opacity = '0';
+            popup.style.visibility = 'hidden';
+        });
+    });
+});
+</script>
+<script>
+  // Professional counter with Intersection Observer
+class EnterpriseStatsCounter {
+  constructor() {
+    this.counters = document.querySelectorAll('.stat-counter');
+    this.animateOnScroll();
+  }
+
+  animateOnScroll() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const item = entry.target.closest('.stat-item');
+          item.classList.add('is-visible');
+          
+          const counter = entry.target;
+          const target = +counter.getAttribute('data-target');
+          
+          if (target && !counter.classList.contains('counted')) {
+            this.count(counter, target);
+            counter.classList.add('counted');
+          }
+        }
+      });
+    }, { threshold: 0.7 });
+
+    this.counters.forEach(counter => observer.observe(counter));
+  }
+
+  count(element, target) {
+    let current = 0;
+    const increment = target / 80; // Smooth, not too fast
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        element.textContent = target;
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+    }, 20);
+  }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  new EnterpriseStatsCounter();
+});
+</script>
+
   </body>
 </html>
