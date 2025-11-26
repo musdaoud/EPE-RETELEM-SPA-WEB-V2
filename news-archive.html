@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toutes nos actualités - RETELEM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Header with back button */
+        .archive-page-header {
+            background: linear-gradient(135deg, #0b74da, #5aa8f2);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(11, 116, 218, 0.3);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .back-navigation {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .archive-page-title h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .archive-page-title p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Controls Section */
+        .archive-controls {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .archive-search {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .archive-search input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .archive-search input:focus {
+            outline: none;
+            border-color: #0b74da;
+            box-shadow: 0 0 0 3px rgba(11, 116, 218, 0.1);
+        }
+
+        .archive-search button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #0b74da;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .archive-search button:hover {
+            background: #094fa3;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .archive-filters {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .archive-filters select {
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            min-width: 200px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .archive-filters select:focus {
+            outline: none;
+            border-color: #0b74da;
+        }
+
+        /* Stats Bar */
+        .archive-stats {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        /* Main Content */
+        .archive-main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .archive-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .archive-item {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .archive-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(11, 116, 218, 0.15);
+        }
+
+        .archive-item-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 180px;
+        }
+
+        .archive-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .archive-item:hover .archive-item-image img {
+            transform: scale(1.1);
+        }
+
+        .archive-item-category {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(11, 116, 218, 0.95);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .archive-item-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .archive-item-title {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .archive-item-excerpt {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .archive-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .archive-item-meta {
+            display: flex;
+            gap: 2rem;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .archive-item-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .archive-item-action {
+            color: #0b74da;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.05rem;
+            transition: gap 0.3s ease;
+        }
+
+        .archive-item:hover .archive-item-action {
+            gap: 1.3rem;
+        }
+
+        /* Pagination */
+        .archive-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            padding: 2rem 0;
+        }
+
+        .pagination-btn {
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .pagination-btn:hover {
+            border-color: #0b74da;
+            color: #0b74da;
+            transform: translateY(-2px);
+        }
+
+        .pagination-btn.active {
+            background: #0b74da;
+            color: white;
+            border-color: #0b74da;
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #64748b;
+        }
+
+        .no-results i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .archive-item {
+                grid-template-columns: 200px 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .archive-page-title h1 {
+                font-size: 2rem;
+            }
+
+            .archive-controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .archive-search {
+                min-width: 100%;
+            }
+
+            .archive-filters {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .archive-filters select {
+                min-width: 100%;
+            }
+
+            .archive-item {
+                grid-template-columns: 1fr;
+            }
+
+            .archive-item-image {
+                height: 220px;
+            }
+
+            .archive-stats {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="archive-page-header">
+        <div class="header-container">
+            <div class="back-navigation">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour à l'accueil
+                </a>
+            </div>
+            <div class="archive-page-title">
+                <h1>
+                    <i class="fas fa-newspaper"></i>
+                    Toutes nos actualités
+                </h1>
+                <p>Découvrez l'ensemble de nos publications, projets et innovations</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="archive-controls">
+        <div class="archive-search">
+            <input type="text" id="archiveSearch" placeholder="Rechercher dans les actualités...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="archive-filters">
+            <select id="categoryFilter">
+                <option value="all">Toutes les catégories</option>
+                <option value="projects">Projets</option>
+                <option value="events">Événements</option>
+                <option value="partnerships">Partenariats</option>
+                <option value="innovations">Innovations</option>
+            </select>
+            <select id="sortFilter">
+                <option value="newest">Plus récent</option>
+                <option value="oldest">Plus ancien</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="archive-stats">
+        <span id="totalNews">0 actualités</span>
+        <span id="currentPage">Page 1</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="archive-main">
+        <div class="archive-grid" id="archiveGrid">
+            <!-- News items will be loaded here -->
+        </div>
+
+        <div class="archive-pagination" id="archivePagination">
+            <!-- Pagination will be generated here -->
+        </div>
+    </main>
+
+    <script>
+        // Your existing newsData from the main page
+        const extendedNewsData = [
+        {
+            id: 1,
+            title: "Inauguration du nouveau centre de formation en cybersécurité",
+            excerpt: "Nous sommes fiers d'annoncer l'ouverture de notre centre de formation spécialisé en cybersécurité, équipé des dernières technologies pour former les experts de demain.",
+            category: "innovations",
+            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
+            date: "15 Mars 2024",
+            type: "Article"
+        },
+        {
+            id: 2,
+            title: "Partenariat stratégique avec Cisco pour les infrastructures réseau",
+            excerpt: "Signature d'un nouveau partenariat avec Cisco pour développer des solutions réseau innovantes pour les entreprises algériennes.",
+            category: "partnerships",
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop",
+            date: "10 Mars 2024",
+            type: "Communiqué"
+        },
+        {
+            id: 3,
+            title: "Lancement du projet de ville intelligente à Alger",
+            excerpt: "Nous déployons une infrastructure complète de ville intelligente intégrant surveillance, connectivité et gestion des données.",
+            category: "projects",
+            image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&h=600&fit=crop",
+            date: "5 Mars 2024",
+            type: "Projet"
+        },
+
+        {
+            id: 4,
+            title: "Formation certifiante en réseaux avancés",
+            excerpt: "Notre centre de formation propose une nouvelle certification en réseaux avancés pour les professionnels du secteur.",
+            category: "innovations",
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
+            date: "28 Février 2024",
+            type: "Formation"
+        },
+        {
+            id: 5,
+            title: "Participation au Salon International des Télécoms",
+            excerpt: "Retour sur notre participation au SIT 2024 où nous avons présenté nos dernières innovations en matière de connectivité.",
+            category: "events",
+            image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+            date: "20 Février 2024",
+            type: "Événement"
+        },
+        {
+            id: 6,
+            title: "Déploiement de la fibre optique dans 10 nouvelles wilayas",
+            excerpt: "Extension de notre réseau fibre optique pour couvrir 10 nouvelles wilayas et améliorer la connectivité nationale.",
+            category: "projects",
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+            date: "15 Février 2024",
+            type: "Projet"
+        },
+        {
+            id: 7,
+            title: "Nouvelle solution de vidéosurveillance IA",
+            excerpt: "Lancement de notre nouvelle solution de vidéosurveillance intelligente avec reconnaissance faciale et analytique avancée.",
+            category: "innovations",
+            image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=800&h=600&fit=crop",
+            date: "10 Février 2024",
+            type: "Innovation"
+        },
+        {
+            id: 8,
+            title: "Partenariat avec le ministère de l'Éducation",
+            excerpt: "Collaboration avec le ministère pour équiper 100 écoles avec des solutions réseau et de sécurité avancées.",
+            category: "partnerships",
+            image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
+            date: "5 Février 2024",
+            type: "Partenariat"
+        },
+        {
+            id: 9,
+            title: "Webinaire sur la transformation digitale",
+            excerpt: "Replay disponible de notre webinaire sur les enjeux de la transformation digitale pour les entreprises algériennes.",
+            category: "events",
+            image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop",
+            date: "1 Février 2024",
+            type: "Webinaire"
+        },
+            {
+            id: 10,
+            title: "Modernisation du réseau national de fibre optique",
+            excerpt: "Accélération du déploiement de la fibre optique avec de nouvelles technologies de pointe.",
+            category: "projects",
+            image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop",
+            date: "25 Janvier 2024",
+            type: "Projet"
+        },
+        {
+            id: 11,
+            title: "Formation en intelligence artificielle pour nos équipes",
+            excerpt: "Programme de formation intensif en IA et machine learning pour nos ingénieurs.",
+            category: "innovations",
+            image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop",
+            date: "20 Janvier 2024",
+            type: "Formation"
+        },
+        {
+            id: 12,
+            title: "Conférence sur la 5G et ses applications industrielles",
+            excerpt: "Organisation d'une conférence majeure sur les applications de la 5G en milieu industriel.",
+            category: "events",
+            image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&h=600&fit=crop",
+            date: "15 Janvier 2024",
+            type: "Conférence"
+        },
+        // Add more articles up to 40 for demo...
+        {
+            id: 13,
+            title: "Nouveau partenariat avec l'université d'Alger",
+            excerpt: "Collaboration pour la recherche et développement en télécommunications.",
+            category: "partnerships",
+            image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+            date: "1 Janvier 2024",
+            type: "Partenariat"
+        }
+            // Add more articles here...
+        ];
+
+        // Archive state
+        let archiveState = {
+            currentPage: 1,
+            itemsPerPage: 10,
+            currentCategory: 'all',
+            currentSort: 'newest',
+            searchTerm: ''
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeArchive();
+        });
+
+        function initializeArchive() {
+            // Search functionality
+            document.getElementById('archiveSearch').addEventListener('input', function() {
+                archiveState.searchTerm = this.value.toLowerCase();
+                archiveState.currentPage = 1;
+                renderArchive();
+            });
+
+            // Category filter
+            document.getElementById('categoryFilter').addEventListener('change', function() {
+                archiveState.currentCategory = this.value;
+                archiveState.currentPage = 1;
+                renderArchive();
+            });
+
+            // Sort filter
+            document.getElementById('sortFilter').addEventListener('change', function() {
+                archiveState.currentSort = this.value;
+                archiveState.currentPage = 1;
+                renderArchive();
+            });
+
+            // Initial render
+            renderArchive();
+        }
+
+        function renderArchive() {
+            const grid = document.getElementById('archiveGrid');
+            const pagination = document.getElementById('archivePagination');
+            const totalNews = document.getElementById('totalNews');
+            const currentPageSpan = document.getElementById('currentPage');
+
+            // Filter news
+            let filteredNews = extendedNewsData.filter(item => {
+                const matchesCategory = archiveState.currentCategory === 'all' || item.category === archiveState.currentCategory;
+                const matchesSearch = !archiveState.searchTerm || 
+                    item.title.toLowerCase().includes(archiveState.searchTerm) ||
+                    item.excerpt.toLowerCase().includes(archiveState.searchTerm);
+                return matchesCategory && matchesSearch;
+            });
+
+            // Sort news
+            filteredNews.sort((a, b) => {
+                const dateA = new Date(parseDate(a.date));
+                const dateB = new Date(parseDate(b.date));
+                return archiveState.currentSort === 'newest' ? dateB - dateA : dateA - dateB;
+            });
+
+            // Calculate pagination
+            const totalItems = filteredNews.length;
+            const totalPages = Math.ceil(totalItems / archiveState.itemsPerPage);
+            const startIndex = (archiveState.currentPage - 1) * archiveState.itemsPerPage;
+            const endIndex = startIndex + archiveState.itemsPerPage;
+            const currentItems = filteredNews.slice(startIndex, endIndex);
+
+            // Update stats
+            totalNews.textContent = `${totalItems} actualité${totalItems !== 1 ? 's' : ''}`;
+            currentPageSpan.textContent = `Page ${archiveState.currentPage} sur ${totalPages || 1}`;
+
+            // Render grid
+            if (currentItems.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <h3>Aucune actualité trouvée</h3>
+                        <p>Essayez de modifier vos critères de recherche</p>
+                    </div>
+                `;
+            } else {
+                grid.innerHTML = currentItems.map(item => `
+                    <div class="archive-item" onclick="openNewsletter(${item.id})">
+                        <div class="archive-item-image">
+                            <img src="${item.image}" alt="${item.title}">
+                            <span class="archive-item-category">${item.category}</span>
+                        </div>
+                        <div class="archive-item-content">
+                            <div>
+                                <h2 class="archive-item-title">${item.title}</h2>
+                                <p class="archive-item-excerpt">${item.excerpt}</p>
+                            </div>
+                            <div class="archive-item-footer">
+                                <div class="archive-item-meta">
+                                    <span><i class="far fa-calendar"></i> ${item.date}</span>
+                                    <span><i class="far fa-file-alt"></i> ${item.type}</span>
+                                </div>
+                                <div class="archive-item-action">
+                                    <span>Lire la suite</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render pagination
+            renderPagination(pagination, totalPages);
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderPagination(container, totalPages) {
+            if (totalPages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+
+            // Previous button
+            html += `<button class="pagination-btn" onclick="goToPage(${archiveState.currentPage - 1})" ${archiveState.currentPage === 1 ? 'disabled' : ''}>
+                <i class="fas fa-chevron-left"></i> Précédent
+            </button>`;
+
+            // Page numbers
+            const maxVisible = 5;
+            let startPage = Math.max(1, archiveState.currentPage - Math.floor(maxVisible / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+
+            if (endPage - startPage + 1 < maxVisible) {
+                startPage = Math.max(1, endPage - maxVisible + 1);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                html += `<button class="pagination-btn ${i === archiveState.currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+            }
+
+            // Next button
+            html += `<button class="pagination-btn" onclick="goToPage(${archiveState.currentPage + 1})" ${archiveState.currentPage === totalPages ? 'disabled' : ''}>
+                Suivant <i class="fas fa-chevron-right"></i>
+            </button>`;
+
+            container.innerHTML = html;
+        }
+
+        function goToPage(page) {
+            const totalPages = Math.ceil(extendedNewsData.length / archiveState.itemsPerPage);
+            if (page < 1 || page > totalPages) return;
+            archiveState.currentPage = page;
+            renderArchive();
+        }
+
+        function parseDate(dateString) {
+            const months = {
+                'janvier': 0, 'février': 1, 'mars': 2, 'avril': 3, 'mai': 4, 'juin': 5,
+                'juillet': 6, 'août': 7, 'septembre': 8, 'octobre': 9, 'novembre': 10, 'décembre': 11
+            };
+            const parts = dateString.toLowerCase().split(' ');
+            return new Date(parseInt(parts[2]), months[parts[1]], parseInt(parts[0]));
+        }
+
+        function openNewsletter(id) {
+            // Redirect to the article detail page or open modal
+            // For now, you can redirect back to main page with hash
+            window.location.href = `index.html#article-${id}`;
+        }
+    </script>
+</body>
+</html>
