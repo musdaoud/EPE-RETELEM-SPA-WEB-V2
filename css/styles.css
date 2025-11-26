@@ -104,45 +104,134 @@
     .submenu {
       position: absolute;
       left: 0;
-      top: calc(100% + 8px);
-      min-width: 240px;
+      top: calc(100% + 12px);
+      min-width: 280px;
       background: #fff;
-      border: 1px solid #e3e6ea;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      padding: 0.5rem 0;
+      border: 1px solid #f0f0f0;
+      border-radius: 12px;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.1),
+        0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 0.75rem 0;
       opacity: 0;
-      transform: translateY(6px);
+      transform: translateY(8px) scale(0.95);
       pointer-events: none;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      z-index: 10;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
     }
-
+    
+    .submenu::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 20px;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      transform: rotate(45deg);
+      border-top: 1px solid #f0f0f0;
+      border-left: 1px solid #f0f0f0;
+    }
+    
     .submenu li {
       white-space: nowrap;
+      list-style: none; /* This removes the black dots */
+      margin: 0;
+      padding: 0;
+      position: relative;
     }
-
+    
     .submenu a {
-      padding: 0.75rem 1.25rem;
-      display: block;
-      color: var(--muted);
+      padding: 0.875rem 1.5rem;
+      display: flex;
+      align-items: center;
+      color: #555;
       font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      position: relative;
+      font-size: 0.95rem;
     }
-
+    
+    .submenu a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 0;
+      background: linear-gradient(135deg, #0b74da, #5aa8f2);
+      border-radius: 0 2px 2px 0;
+      transition: height 0.3s ease;
+    }
+    
     .submenu a:hover {
-      color: var(--text);
-      background: rgba(11, 116, 218, 0.04);
+      color: #0b74da;
+      background: linear-gradient(135deg, rgba(11, 116, 218, 0.04), rgba(90, 168, 242, 0.02));
+      padding-left: 2rem;
     }
-
+    
+    .submenu a:hover::before {
+      height: 20px;
+    }
+    
+    /* Add icons (using pseudo-elements) */
+    .submenu a::after {
+      content: '→';
+      margin-left: auto;
+      opacity: 0;
+      transform: translateX(-5px);
+      transition: all 0.3s ease;
+      color: #0b74da;
+      font-weight: 600;
+    }
+    
+    .submenu a:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Add subtle divider between items */
+    .submenu li:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 1.5rem;
+      right: 1.5rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #f0f0f0, transparent);
+    }
+    
     /* Show submenu on hover (desktop) */
     @media (min-width: 900px) {
       .has-submenu:hover > .submenu,
       .has-submenu:focus-within > .submenu {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
         pointer-events: auto;
       }
     }
+    
+    /* Animation for individual menu items */
+    .submenu li {
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+    
+    .has-submenu:hover > .submenu li,
+    .has-submenu:focus-within > .submenu li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Staggered animation for list items */
+    .has-submenu:hover > .submenu li:nth-child(1) { transition-delay: 0.05s; }
+    .has-submenu:hover > .submenu li:nth-child(2) { transition-delay: 0.1s; }
+    .has-submenu:hover > .submenu li:nth-child(3) { transition-delay: 0.15s; }
+    .has-submenu:hover > .submenu li:nth-child(4) { transition-delay: 0.2s; }
+    .has-submenu:hover > .submenu li:nth-child(5) { transition-delay: 0.25s; }
 
     /* Mobile Navigation */
     .mobile-nav-toggle {
@@ -270,10 +359,22 @@
       color: #fff;
       padding: 3rem 1rem;
       isolation: isolate;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/background.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      /* Remove background-image properties */
+    }
+
+    .hero1-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .hero1-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .hero1-content {
